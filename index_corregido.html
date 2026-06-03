@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparte la Experiencia Pilates - Pilates Studio Aravaca</title>
     
-    <!-- Open Graph para WhatsApp, Facebook, etc -->
+    <!-- Open Graph CORRECTO para WhatsApp -->
     <meta property="og:title" content="Comparte la Experiencia Pilates">
-    <meta property="og:description" content="Invita a alguien especial a descubrir nuestras clases. Ambos obtenéis 10% de descuento en tu bono mensual durante 2 meses. Válido: Junio - Octubre 2026.">
+    <meta property="og:description" content="Invita a alguien especial a descubrir nuestras clases. Ambos obtenéis 10% de descuento en tu bono mensual durante 2 meses.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pilatesmadrid.github.io/pilates-invita/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/pilatesmadrid/pilates-invita/main/LOGOTIPO.png">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/pilatesmadrid/pilates-invita/main/LOGOTIPO.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1036">
+    <meta property="og:image:height" content="1036">
+    <meta property="og:locale" content="es_ES">
     
     <style>
         * {
@@ -201,8 +208,6 @@
             border-left: 4px solid #D4AF37;
             text-align: left;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
-            border-left: 4px solid #D4AF37;
         }
 
         .route:hover {
@@ -359,63 +364,6 @@
             display: none;
         }
 
-        .share-section {
-            background: linear-gradient(135deg, #ede0b8 0%, #e8daa8 100%);
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .share-title {
-            font-size: 12px;
-            color: #6b5a1f;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        .share-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .share-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .share-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .share-whatsapp:hover {
-            transform: scale(1.1);
-        }
-
-        .share-link {
-            background: #D4AF37;
-            color: #1a1a1a;
-        }
-
-        .share-link:hover {
-            transform: scale(1.1);
-            background: #c39d2e;
-        }
-
         @media (max-width: 480px) {
             .card {
                 border-radius: 16px;
@@ -466,14 +414,6 @@
             <div class="route">
                 <h3>⭐ Primera vez en máquinas</h3>
                 <p><strong>Evaluación privada (43,75€)</strong> + 10% descuento en sesiones de introducción + acceso a grupo</p>
-            </div>
-
-            <div class="share-section">
-                <div class="share-title">Comparte esta campaña</div>
-                <div class="share-buttons">
-                    <button class="share-btn share-whatsapp" onclick="compartirWhatsApp()" title="Compartir en WhatsApp">💬</button>
-                    <button class="share-btn share-link" onclick="copiarLink()" title="Copiar enlace">🔗</button>
-                </div>
             </div>
 
             <div class="buttons">
@@ -532,19 +472,6 @@
                     btn.innerHTML = original;
                 }, 2000);
             });
-        }
-
-        function copiarLink() {
-            const url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                alert('Enlace copiado. Ahora puedes pegarlo en WhatsApp o cualquier red social.');
-            });
-        }
-
-        function compartirWhatsApp() {
-            const url = window.location.href;
-            const texto = encodeURIComponent('Te invito a descubrir Pilates Studio Aravaca. Ambos obtenemos 10% de descuento: ' + url);
-            window.open('https://wa.me/?text=' + texto, '_blank');
         }
     </script>
 </body>
