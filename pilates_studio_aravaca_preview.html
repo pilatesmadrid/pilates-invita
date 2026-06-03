@@ -1,0 +1,118 @@
+<div style="max-width: 500px; margin: 0 auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <style>
+    .preview-container { background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 40px 30px; text-align: center; }
+    .logo-img { width: 180px; height: 180px; margin: 0 auto 30px; background: #f5f5f5; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #999; }
+    .title-main { font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0; line-height: 1.2; }
+    .subtitle-text { font-size: 16px; color: #666; line-height: 1.5; margin: 0 0 30px 0; }
+    .cta-button { display: inline-flex; align-items: center; gap: 8px; background: #f0f0f0; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 15px; color: #1a1a1a; transition: all 0.3s; }
+    .cta-button:hover { background: #e0e0e0; transform: translateY(-2px); }
+    .arrow-bounce { display: inline-block; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    
+    .expanded-section { display: none; }
+    .expanded-section.active { display: flex; flex-direction: column; gap: 25px; }
+    
+    .offer-box { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 25px; border-radius: 15px; }
+    .discount-text { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .offer-desc { font-size: 14px; line-height: 1.6; opacity: 0.95; }
+    .offer-duration { font-size: 12px; margin-top: 12px; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 12px; }
+    
+    .route-box { background: #f8f8f8; padding: 20px; border-radius: 12px; border-left: 4px solid #1a1a1a; text-align: left; }
+    .route-title { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+    .route-desc { font-size: 14px; color: #555; line-height: 1.5; }
+    
+    .action-btns { display: flex; flex-direction: column; gap: 10px; }
+    .action-btn { padding: 14px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .whatsapp { background: #25D366; color: white; }
+    .whatsapp:hover { background: #20a652; transform: translateY(-2px); }
+    .copy { background: #1a1a1a; color: white; }
+    .copy:hover { background: #333; transform: translateY(-2px); }
+    .email { background: #f0f0f0; color: #1a1a1a; border: 2px solid #ddd; }
+    .email:hover { background: #e8e8e8; }
+    
+    .contact-info { background: #f8f8f8; padding: 20px; border-radius: 12px; }
+    .contact-item { font-size: 13px; color: #555; margin: 10px 0; line-height: 1.5; text-align: left; }
+    .contact-item strong { color: #1a1a1a; }
+    
+    .terms { font-size: 12px; color: #999; line-height: 1.6; text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0; }
+    
+    .close-x { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #666; display: none; }
+    .close-x:hover { color: #1a1a1a; }
+    
+    .preview-container { position: relative; }
+    .preview-container.exp .close-x { display: block; }
+    
+    .initial { transition: opacity 0.5s; }
+    .initial.hidden { opacity: 0; display: none; }
+  </style>
+
+  <div class="preview-container" id="cont">
+    <button class="close-x" id="closeBtn">✕</button>
+    
+    <!-- VISTA INICIAL -->
+    <div class="initial" id="init">
+      <div class="logo-img" onclick="expand()">
+        <span style="color: #1a1a1a; font-weight: 700;">Logo de Pilates<br>Studio Aravaca</span>
+      </div>
+      <h1 class="title-main">Comparte la Experiencia Pilates</h1>
+      <p class="subtitle-text">Invita a alguien especial a descubrir nuestras clases y consigue beneficios exclusivos para ambos.</p>
+      <button class="cta-button" onclick="expand()">
+        <span>Haz clic en el logo para saber más</span>
+        <span class="arrow-bounce">↓</span>
+      </button>
+    </div>
+
+    <!-- VISTA EXPANDIDA -->
+    <div class="expanded-section" id="exp">
+      <div class="offer-box">
+        <div class="discount-text">10% Descuento</div>
+        <div class="offer-desc">Ambos obtenéis 10% de descuento en tu bono mensual durante 2 meses consecutivos.</div>
+        <div class="offer-duration"><strong>Válido:</strong> Junio - Octubre 2026 | <strong>Límite:</strong> 2 invitaciones por persona</div>
+      </div>
+
+      <div class="route-box">
+        <div class="route-title">🏋️ Con experiencia previa</div>
+        <div class="route-desc">Si tu amigo/a ya ha entrenado en Reformer, Silla o Cadillac: <strong>clase de prueba gratuita</strong> en grupo semiprivado (máx. 4 personas)</div>
+      </div>
+
+      <div class="route-box">
+        <div class="route-title">⭐ Primera vez en máquinas</div>
+        <div class="route-desc"><strong>Evaluación privada (43,75€)</strong> + 10% descuento en sesiones de introducción + acceso a grupo</div>
+      </div>
+
+      <div class="action-btns">
+        <button class="action-btn whatsapp">💬 Contáctanos por WhatsApp</button>
+        <button class="action-btn copy" onclick="copy()">📋 Copiar enlace para compartir</button>
+        <button class="action-btn email">✉️ Envía un email</button>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item"><strong>📍 Ubicación:</strong><br>Calle Humera 37, Aravaca, Madrid</div>
+        <div class="contact-item"><strong>📱 WhatsApp:</strong><br>+34 609 716 849</div>
+        <div class="contact-item"><strong>📧 Email:</strong><br>info@pilatesstudioaravaca.com</div>
+      </div>
+
+      <div class="terms"><strong>Términos:</strong> La promoción es válida para nuevos clientes. Se requiere confirmación por parte de nuestro equipo. El descuento se aplica al bono mensual vigente. No acumulable con otras ofertas.</div>
+    </div>
+  </div>
+
+  <script>
+    function expand() {
+      document.getElementById('init').classList.add('hidden');
+      document.getElementById('exp').classList.add('active');
+      document.getElementById('cont').classList.add('exp');
+    }
+    function collapse() {
+      document.getElementById('init').classList.remove('hidden');
+      document.getElementById('exp').classList.remove('active');
+      document.getElementById('cont').classList.remove('exp');
+    }
+    document.getElementById('closeBtn').onclick = collapse;
+    function copy() {
+      const btn = event.target;
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✅ ¡Copiado!';
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    }
+  </script>
+</div>
